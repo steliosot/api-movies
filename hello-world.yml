@@ -1,0 +1,14 @@
+# Hello World Action
+name: Hello World Action
+
+on:
+  push:
+    branches: [master]  # Triggers on push to the master branch
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello World
+        run: echo 'Hello, World!'
