@@ -11,7 +11,7 @@ app.use('/movies',movieRoutes);
 
 app.get('/', (req,res) =>{
     res.send('You are in home');
-});
+}); 
 
 mongoose.connect(process.env.DB_CONNECTOR, ()=> {
     console.log('Connected to MongoDB');
