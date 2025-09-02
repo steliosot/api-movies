@@ -1,0 +1,18 @@
+name: Hello World (Failing Example)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fail-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start Job
+        run: echo "🔄 Starting job..."
+
+      - name: Intentionally Fail
+        run: exit 1   # non-zero exit code means failure
+
+      - name: This will not run
+        run: echo "✅ You won't see this because the step before failed."
