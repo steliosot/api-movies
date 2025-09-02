@@ -1,0 +1,17 @@
+name: Hello World
+
+on:
+  push:        # Runs when you push to the repo
+    branches:
+      - main   # Change if your default branch is different
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "🎉 Hello, World! Your workflow is running."
