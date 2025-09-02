@@ -1,0 +1,12 @@
+name: Hello World (Manual Run)
+
+on:
+  workflow_dispatch:   # allows you to run from the Actions tab
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Say Hello
+        run: echo "👋 Hello, World! Triggered manually from the UI."
