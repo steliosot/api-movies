@@ -20,3 +20,4 @@ mongoose.connect(process.env.DB_CONNECTOR, ()=> {
 app.listen(3000, ()=>{
     console.log('Server is up and running');
 }); 
+
