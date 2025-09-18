@@ -1,27 +1,18 @@
 name: CI - Build and Test
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_dispatch:
 
 jobs:
-  build-and-test:
+  fail-job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Start Job
+        run: echo "🔄 Starting job..."
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+      - name: Intentionally Fail
+        run: exit 1   # non-zero exit code means failure
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: |
-          echo "Running tests..."
-          exit 1   # force failure
+      - name: This will not run
+        run: echo "✅ You won't see this because the step before failed."
